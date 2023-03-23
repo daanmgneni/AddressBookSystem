@@ -9,7 +9,7 @@ namespace AddressBookAssignment
 {
     public class AddPerson
     {
-        public static void Details()
+        public void details()
         {
             List<Contact_UC1> list = new List<Contact_UC1>();
 
@@ -34,6 +34,9 @@ namespace AddressBookAssignment
                 address.eMail = Console.ReadLine();
                 list.Add(address);
                 Console.WriteLine(address.firstName + "\n" + address.lastName + "\n" + address.address + "\n" + address.city + "\n" + address.state + "\n" + address.phoneNumber + "\n" + address.zip + "\n" + address.eMail);
+
+                ///Edit by name///
+
                 Console.WriteLine("Edit by using First Name: ");
                 String name = Console.ReadLine();
                 foreach (var data in list)
@@ -88,6 +91,22 @@ namespace AddressBookAssignment
                 }
 
             }
+        }
+
+        public void deleteContact()
+        {
+            Contact_UC1 address = new Contact_UC1();
+            Console.WriteLine("Enter name to delete details");
+            String name = Console.ReadLine();
+            foreach (var data in list)
+            {
+                if (data.firstname.Equals(name))
+                    address = data;
+
+            }
+            list.Remove(address);
+            Console.WriteLine("contact was deleted" + address.lastName + "\n" + address.address + "\n" + address.city + "\n" + address.state + "\n" + address.state + "\n" + address.phoneNumber + "\n" + address.zip + "\n" + address.zip + "\n" + address.eMail);
+
         }
     }
 }
