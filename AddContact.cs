@@ -9,7 +9,7 @@ namespace AddressBookAssignment
 {
     public class AddPerson
     {
-        public void details()
+        public static void Details()
         {
             List<Contact_UC1> list = new List<Contact_UC1>();
 
@@ -34,6 +34,59 @@ namespace AddressBookAssignment
                 address.eMail = Console.ReadLine();
                 list.Add(address);
                 Console.WriteLine(address.firstName + "\n" + address.lastName + "\n" + address.address + "\n" + address.city + "\n" + address.state + "\n" + address.phoneNumber + "\n" + address.zip + "\n" + address.eMail);
+                Console.WriteLine("Edit by using First Name: ");
+                String name = Console.ReadLine();
+                foreach (var data in list)
+                {
+                    if (data.firstName == name)
+                    {
+                        // Console.WriteLine("Enter option to edit:\n1.First Name\n2.Second Name\n3.Address\n4.city\n5.state\n6.phone number\n7.email");
+                        int option = Convert.ToInt32(Console.ReadLine());
+                        switch (option)
+                        {
+                            case 1:
+                                Console.WriteLine("Enter first name ");
+                                data.firstName = Console.ReadLine();
+                                break;
+                            case 2:
+                                Console.WriteLine("Enter last name ");
+                                data.lastName = Console.ReadLine();
+                                break;
+                            case 3:
+                                Console.WriteLine("Enter address");
+                                data.address = Console.ReadLine();
+                                break;
+                            case 4:
+                                Console.WriteLine("Enter city");
+                                data.city = Console.ReadLine();
+                                break;
+                            case 5:
+                                address.state = Console.ReadLine();
+                                Console.Write("Enter phone umber: ");
+                                break;
+                            case 6:
+                                address.state = Console.ReadLine();
+                                Console.WriteLine("Enter state");
+                                break;
+                            case 7:
+                                address.phoneNumber = Convert.ToInt32(Console.ReadLine());
+                                Console.WriteLine("Enter phne number");
+                                break;
+                            case 8:
+                                address.zip = Convert.ToInt32(Console.ReadLine());
+                                list.Add(address);
+                                break;
+                            case 9:
+                                Console.WriteLine("Enter email");
+                                data.eMail = Console.ReadLine();
+                                break;
+                        }
+                        Console.WriteLine(address.firstName + "\n" + address.lastName + "\n" + address.address + "\n" + address.city + "\n" + address.state + "\n" + address.state + "\n" + address.phoneNumber + "\n" + address.zip + "\n" + address.zip + "\n" + address.eMail);
+
+                    }
+
+                }
+
             }
         }
     }
