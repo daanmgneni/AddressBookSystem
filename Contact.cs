@@ -1,20 +1,25 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AddressBookSystem
+namespace AddressBookAssignment
 {
-    public class Contact
+    public class Contact_UC1
     {
-        public string firstName;
-        public string lastName;
-        public string mobileNumber;
-        public string address;
-        public string city;
-        public string state;
-        public string zip;
-        public string email;
+
+        public string firstName { get; set; }
+        public string lastName { get; set; }
+        public string address { get; set; }
+        public string city { get; set; }
+        public string state { get; set; }
+
+        public int zip { get; set; }
+        public int phoneNumber { get; set; }
+        public string eMail { get; set; }
+
+
     }
 }
