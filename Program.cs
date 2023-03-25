@@ -1,13 +1,20 @@
-﻿using AddressBookAssignment;
+﻿
+using AddressBookAssignment;
+using System;
+using System.ComponentModel;
+using System.Data;
+using System.Security.Cryptography.X509Certificates;
 
-namespace AddressBook
+namespace AdressBookAssignment
 {
-    class Program
+    class AdressBookMainClass
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Address Book Program");
-            AddPerson.Details();
+
+            Console.WriteLine("Welcome to Adress Book Program");
+            AddPerson contact = new AddPerson();
+            contact.details();
         }
     }
 }

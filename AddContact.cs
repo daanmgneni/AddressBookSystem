@@ -9,9 +9,14 @@ namespace AddressBookAssignment
 {
     public class AddPerson
     {
+        List<Contact_UC1> list = new List<Contact_UC1>();
+
         public void details()
         {
-            List<Contact_UC1> list = new List<Contact_UC1>();
+            //List<Contact_UC1> list = new List<Contact_UC1>();
+            Console.WriteLine("Enter no.of details want to print:");
+            int n = int.Parse(Console.ReadLine());
+            for (int i = 0; i < n; i++)
 
             {
                 Contact_UC1 address = new Contact_UC1();
@@ -29,7 +34,6 @@ namespace AddressBookAssignment
                 address.phoneNumber = Convert.ToInt32(Console.ReadLine());
                 Console.Write("Enter zip: ");
                 address.zip = Convert.ToInt32(Console.ReadLine());
-                list.Add(address);
                 Console.Write("Enter email: ");
                 address.eMail = Console.ReadLine();
                 list.Add(address);
@@ -43,7 +47,7 @@ namespace AddressBookAssignment
                 {
                     if (data.firstName == name)
                     {
-                        // Console.WriteLine("Enter option to edit:\n1.First Name\n2.Second Name\n3.Address\n4.city\n5.state\n6.phone number\n7.email");
+                        Console.WriteLine("Enter option to edit:\n1.First Name\n2.Second Name\n3.Address\n4.city\n5.state\n6.phone number\n7.email");
                         int option = Convert.ToInt32(Console.ReadLine());
                         switch (option)
                         {
@@ -84,7 +88,7 @@ namespace AddressBookAssignment
                                 data.eMail = Console.ReadLine();
                                 break;
                         }
-                        Console.WriteLine(address.firstName + "\n" + address.lastName + "\n" + address.address + "\n" + address.city + "\n" + address.state + "\n" + address.state + "\n" + address.phoneNumber + "\n" + address.zip + "\n" + address.zip + "\n" + address.eMail);
+                        Console.WriteLine(data.firstName + "\n" + data.lastName + "\n" + data.address + "\n" + data.city + "\n" + data.state + "\n" + data.phoneNumber + "\n" + data.zip + "\n" + data.eMail);
 
                     }
 
@@ -100,12 +104,12 @@ namespace AddressBookAssignment
             String name = Console.ReadLine();
             foreach (var data in list)
             {
-                if (data.firstname.Equals(name))
+                if (data.firstName.Equals(name))
                     address = data;
 
             }
             list.Remove(address);
-            Console.WriteLine("contact was deleted" + address.lastName + "\n" + address.address + "\n" + address.city + "\n" + address.state + "\n" + address.state + "\n" + address.phoneNumber + "\n" + address.zip + "\n" + address.zip + "\n" + address.eMail);
+            Console.WriteLine("contact was deleted" + address.lastName + "\n" + address.address + "\n" + address.city + "\n" + address.state + "\n" + address.phoneNumber + "\n" + address.zip + "\n" + address.eMail);
 
         }
     }
