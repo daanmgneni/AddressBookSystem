@@ -19,6 +19,15 @@ namespace AddressBookAssignment
             for (int i = 0; i < n; i++)
 
             {
+                if (i == 0)
+                {
+                    Console.WriteLine("Information 1");
+                }
+                else if (i == 1)
+                {
+                    Console.WriteLine("Information 2");
+
+                }
                 Contact_UC1 address = new Contact_UC1();
                 Console.Write("Enter firstName: ");
                 address.firstName = Console.ReadLine();
