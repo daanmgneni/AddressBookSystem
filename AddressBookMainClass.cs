@@ -47,10 +47,10 @@ namespace Update_AddressBookSystem
 
         public void SearchPersonInCityOrState()
         {
-            Console.WriteLine("Enter City or State name to search Person: ");
+           
             string cityOrStateName = Console.ReadLine();
 
-            var result = AddressBookDic.Values.SelectMany(x => x.Where(y => y.city.ToLower().Equals(cityOrStateName) || y.state.ToLower().Equals(cityOrStateName)));
+            var result = AddressBookDic.Values.SelectMany(x => x.Where(x => x.city.ToLower().Equals(cityOrStateName) || x.state.ToLower().Equals(cityOrStateName)));
 
             if (result.Count() == 0)
             {
@@ -70,7 +70,8 @@ namespace Update_AddressBookSystem
         {
             foreach (var key in AddressBookDic.Keys)
             {
-                Console.WriteLine($"key is {key}");
+                Console.WriteLine($"FirstNmae is {key}");
+                Console.WriteLine("################################"); 
 
                 Console.WriteLine("The Details you stored in Address Book:");
 
@@ -100,6 +101,7 @@ namespace Update_AddressBookSystem
                 {
                     case 1:
                         {
+                            //FOR ADD DETAILS
                             Console.WriteLine("Please add new contact details: ");
                             person.AddDetails();
                             person.DisplayContact();
@@ -108,7 +110,7 @@ namespace Update_AddressBookSystem
 
                         }
                     case 0:
-                        {
+                        { //FOR SEARCH OR EXIT
                             Console.WriteLine("Do you want to search Person in a City or State YES(1) or NO(0)");
                             int option1 = int.Parse(Console.ReadLine());
 
@@ -116,13 +118,29 @@ namespace Update_AddressBookSystem
                             {
                                 case 1:
                                     {
-                                        Console.WriteLine("Please Enter city or state name: ");
-                                        person.SearchPersonInCityOrState();
-                                        flag = true;
+                                        //FOR SEARCH 
+                                        Console.WriteLine("Enter 1 to search by City, 2 to search by State: ");
+                                        int searchOption = int.Parse(Console.ReadLine());
+                                        if (searchOption == 1)
+                                        {
+                                            Console.WriteLine("Enter City  name to search Person: ");
+                                            person.SearchPersonInCityOrState();
+                                        }
+                                        else if (searchOption == 2)
+                                        {
+                                            Console.WriteLine("Enter  State name to search Person: ");
+                                            person.SearchPersonInCityOrState();
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("Invalid option selected");
+                                        }
                                         break;
+
                                     }
                                 case 0:
                                     {
+                                        //FOR EXIT
                                         Console.WriteLine("press any key for exit:");
                                         flag = false;
                                         break;
